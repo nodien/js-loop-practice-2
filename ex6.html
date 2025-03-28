@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heart Shape</title>
+</head>
+<body style="font-family: monospace; white-space: pre;">
+<script>
+  function drawHeart() {
+    let heart = "";
+    let size = 50;
+
+    for (let y = size / 2; y > -size / 2; y--) {
+      let line = "";
+      for (let x = -size; x < size; x++) {
+        // let equation = (x ** 2 + y ** 2 - 1) ** 3 - x ** 2 * y ** 3;
+        let equation = ((x * 0.05) ** 2 + (y * 0.05) ** 2 - 1) ** 3 - (x * 0.05) ** 2 * (y * 0.05) ** 3;
+        line += equation <= 0 ? "*" : "-";
+      }
+      heart += line + "\n";
+    }
+
+    document.write("<h3>Heart Shape</h3><pre>" + heart + "</pre>");
+  }
+
+  drawHeart();
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Calculation</title>
+</head>
+<body>
+<script>
+    function factorial(n) {
+        if (n === 0 || n === 1) return 1;
+        return n * factorial(n - 1);
+    }
+
+    window.onload = function() {
+        let num = parseInt(prompt("Enter a positive integer:"));
+        if (isNaN(num) || num < 0) {
+            alert("Invalid input! Please enter a non-negative integer.");
+        } else {
+            alert(`Factorial of ${num} is ${factorial(num)}`);
+        }
+    };
+</script>
+</body>
+</html>

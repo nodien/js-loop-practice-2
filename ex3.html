@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Right-Angled Triangle</title>
+</head>
+<body>
+<script>
+    function printTriangle(n) {
+        let result = "";
+
+        // Bottom-left aligned
+        result += "<h3>Bottom-Left Aligned</h3>";
+        for (let i = 1; i <= n; i++) {
+            result += "*".repeat(i) + "<br>";
+        }
+
+        // Top-left aligned
+        result += "<h3>Top-Left Aligned</h3>";
+        for (let i = n; i >= 1; i--) {
+            result += "*".repeat(i) + "<br>";
+        }
+
+        // Bottom-right aligned
+        result += "<h3>Bottom-Right Aligned</h3>";
+        for (let i = 1; i <= n; i++) {
+            result += "&nbsp;".repeat((n - i) * 2) + "*".repeat(i) + "<br>";
+        }
+
+        // Top-right aligned
+        result += "<h3>Top-Right Aligned</h3>";
+        for (let i = n; i >= 1; i--) {
+            result += "&nbsp;".repeat((n - i) * 2) + "*".repeat(i) + "<br>";
+        }
+
+        return result;
+    }
+
+    let size = parseInt(prompt("Enter triangle size:"));
+    if (isNaN(size) || size <= 0) {
+        document.write("<p>Invalid input! Please enter a positive integer.</p>");
+    } else {
+        document.write(printTriangle(size));
+    }
+</script>
+</body>
+</html>
